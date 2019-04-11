@@ -1,17 +1,24 @@
 package com.company;
 
+import com.company.payment.Cash;
+import com.company.payment.Payment;
 import com.company.payment.PaymentMethod;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXSpinner;
+import com.sun.rowset.internal.Row;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXSpinner;
+import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 
 
@@ -59,6 +66,8 @@ public class wow2 extends Application {
         Label label17 = new Label();
        Line line0 = new Line();
         VBox vBox = new VBox();
+        VBox vBox1 = new VBox();
+
         GridPane gridPane0 = new GridPane();
         ColumnConstraints columnConstraints2 = new ColumnConstraints();
         ColumnConstraints columnConstraints3 = new ColumnConstraints();
@@ -66,7 +75,9 @@ public class wow2 extends Application {
         RowConstraints rowConstraints7 = new RowConstraints();
         RowConstraints rowConstraints8 = new RowConstraints();
        RowConstraints rowConstraints9 = new RowConstraints();
-       Label label18 = new Label();
+
+
+        Label label18 = new Label();
         JFXComboBox jFXComboBox = new JFXComboBox();
        JFXButton jFXButton = new JFXButton("Confirm");
         Label label19 = new Label();
@@ -87,20 +98,24 @@ public class wow2 extends Application {
         imageView.setPreserveRatio(true);
 
         label.setPrefHeight(307.0);
-        label.setPrefWidth(550.0);
-        label.setText("      Payment  ");
+        label.setPrefWidth(1200);
+        label.setText("                             Payment  ");
         label.setFont(new Font("Century Gothic", 64.0));
 
-        line.setEndX(989.2929077148438);
-        line.setEndY(-2.8284270763397217);
+        line.setEndX(0);
+        line.setEndY(0);
         line.setStartX(2078.5859375);
-        line.setStartY(-4.242640495300293);
+        line.setStartY(0);
 
         hBox0.setPrefHeight(502.0);
         hBox0.setPrefWidth(1090.0);
 
         gridPane.setPrefHeight(503.0);
-        gridPane.setPrefWidth(560.0);
+        gridPane.setPrefWidth(950);
+        GridPane gridPane1=new GridPane();
+
+        gridPane0.setPrefHeight(500);
+        gridPane0.setPrefWidth(1800);
 
         columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
         columnConstraints.setMaxWidth(422.0);
@@ -159,62 +174,46 @@ public class wow2 extends Application {
 
         GridPane.setRowIndex(label0, 1);
         label0.setPrefHeight(21.0);
-        label0.setPrefWidth(210.0);
+        label0.setPrefWidth(300);
         label0.setText("  Movie Name                 :");
-        label0.setFont(new Font(18.0));
+        label0.setFont(new Font(25));
 
         GridPane.setRowIndex(label1, 2);
         label1.setPrefHeight(21.0);
-        label1.setPrefWidth(210.0);
+        label1.setPrefWidth(300);
         label1.setText("  Number of tickets         :");
-        label1.setFont(new Font(18.0));
+        label1.setFont(new Font(25));
 
         GridPane.setRowIndex(label2, 3);
         label2.setPrefHeight(21.0);
-        label2.setPrefWidth(210.0);
+        label2.setPrefWidth(300);
         label2.setText("  Viewing Option             :");
-        label2.setFont(new Font(18.0));
+        label2.setFont(new Font(25));
 
         GridPane.setRowIndex(label3, 4);
         label3.setPrefHeight(21.0);
-        label3.setPrefWidth(210.0);
+        label3.setPrefWidth(300);
         label3.setText("  Ticket Price                    :");
-        label3.setFont(new Font(18.0));
+        label3.setFont(new Font(25));
 
         GridPane.setRowIndex(label4, 5);
         label4.setPrefHeight(21.0);
-        label4.setPrefWidth(210.0);
+        label4.setPrefWidth(300);
         label4.setText("  Hall                                :");
-        label4.setFont(new Font(18.0));
+        label4.setFont(new Font(25));
 
-        GridPane.setRowIndex(label5, 6);
-        label5.setPrefHeight(21.0);
-        label5.setPrefWidth(524.0);
-        label5.setText("----------------------------------");
 
-        GridPane.setColumnIndex(label6, 1);
-        GridPane.setRowIndex(label6, 6);
-        label6.setPrefHeight(21.0);
-        label6.setPrefWidth(524.0);
-        label6.setText("----------------------------------------------");
-
-        GridPane.setRowIndex(label7, 7);
         label7.setPrefHeight(63.0);
-        label7.setPrefWidth(210.0);
+        label7.setPrefWidth(300);
         label7.setText("  Total Price           :");
-        label7.setFont(new Font(24.0));
+        label7.setFont(new Font(34));
 
         GridPane.setColumnIndex(label8, 1);
-        GridPane.setRowIndex(label8, 7);
         label8.setPrefHeight(35.0);
         label8.setPrefWidth(131.0);
         label8.setText("label");
 
-        GridPane.setColumnIndex(label9, 2);
-        GridPane.setRowIndex(label9, 6);
-        label9.setPrefHeight(21.0);
-        label9.setPrefWidth(79.0);
-        label9.setText("----------");
+
 
         GridPane.setColumnIndex(label10, 1);
         label10.setPrefHeight(35.0);
@@ -223,7 +222,6 @@ public class wow2 extends Application {
         label10.setFont(new Font(36.0));
 
         GridPane.setColumnIndex(label11, 2);
-        GridPane.setRowIndex(label11, 7);
         label11.setPrefHeight(21.0);
         label11.setPrefWidth(131.0);
         label11.setText("L E");
@@ -264,7 +262,11 @@ public class wow2 extends Application {
         label16.setPrefHeight(21.0);
         label16.setPrefWidth(235.0);
         label16.setText("Label");
-
+        Line line2=new Line();
+        line2.setStartX(2000);
+        line2.setStartY(300);
+        line2.setEndX(1050);
+        line2.setEndY(300);
         GridPane.setColumnIndex(label17, 1);
         GridPane.setRowIndex(label17, 5);
         label17.setLayoutX(217.0);
@@ -273,31 +275,34 @@ public class wow2 extends Application {
         label17.setPrefWidth(235.0);
         label17.setText("Label");
 
-        line0.setEndX(-103.74264526367188);
-        line0.setEndY(492.29290771484375);
-        line0.setStartX(-96.44975280761719);
+        line0.setEndX(-150);
+        line0.setEndY(200);
+        line0.setStartX(-150);
         line0.setStartY(984.5858154296875);
 
         vBox.setPrefHeight(498.0);
         vBox.setPrefWidth(535.0);
 
-        gridPane0.setPrefHeight(317.0);
-        gridPane0.setPrefWidth(531.0);
+        vBox1.setPrefHeight(498.0);
+        vBox1.setPrefWidth(535.0);
+
+        gridPane0.setPrefHeight(500);
+        gridPane0.setPrefWidth(1800);
 
         columnConstraints2.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints2.setMaxWidth(260.0);
+        columnConstraints2.setMaxWidth(600);
         columnConstraints2.setMinWidth(10.0);
-        columnConstraints2.setPrefWidth(165.0);
+        columnConstraints2.setPrefWidth(600);
 
         columnConstraints3.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints3.setMaxWidth(355.0);
+        columnConstraints3.setMaxWidth(500);
         columnConstraints3.setMinWidth(10.0);
-        columnConstraints3.setPrefWidth(223.0);
+        columnConstraints3.setPrefWidth(500);
 
         columnConstraints4.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-        columnConstraints4.setMaxWidth(355.0);
+        columnConstraints4.setMaxWidth(500);
         columnConstraints4.setMinWidth(10.0);
-        columnConstraints4.setPrefWidth(143.0);
+        columnConstraints4.setPrefWidth(500);
 
         rowConstraints7.setMinHeight(10.0);
         rowConstraints7.setPrefHeight(30.0);
@@ -308,16 +313,17 @@ public class wow2 extends Application {
         rowConstraints8.setPrefHeight(90.0);
         rowConstraints8.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
-        rowConstraints9.setMaxHeight(135.0);
+        rowConstraints9.setMaxHeight(300);
         rowConstraints9.setMinHeight(10.0);
-        rowConstraints9.setPrefHeight(121.0);
+        rowConstraints9.setPrefHeight(300);
         rowConstraints9.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
+
 
         GridPane.setRowIndex(label18, 1);
         label18.setPrefHeight(27.0);
-        label18.setPrefWidth(168.0);
-        label18.setText("Payment Method   :");
-        label18.setFont(new Font(18.0));
+        label18.setPrefWidth(500);
+        label18.setText("        Payment Method :");
+        label18.setFont(new Font(23));
 
         GridPane.setColumnIndex(jFXComboBox, 1);
         GridPane.setRowIndex(jFXComboBox, 1);
@@ -325,13 +331,15 @@ public class wow2 extends Application {
 
         GridPane.setColumnIndex(jFXButton, 2);
         GridPane.setRowIndex(jFXButton, 2);
-        jFXButton.setFont(new Font(18.0));
+        jFXButton.setFont(new Font(25));
         jFXButton.getStyleClass().add("btn");
 
 
         label19.setPrefHeight(194.0);
-        label19.setPrefWidth(538.0);
+        label19.setPrefWidth(1200);
         label19.setText("label");
+
+
 
         hBox.getChildren().add(imageView);
         hBox.getChildren().add(label);
@@ -341,6 +349,9 @@ public class wow2 extends Application {
         gridPane.getColumnConstraints().add(columnConstraints);
         gridPane.getColumnConstraints().add(columnConstraints0);
         gridPane.getColumnConstraints().add(columnConstraints1);
+        gridPane1.getColumnConstraints().add(columnConstraints);
+        gridPane1.getColumnConstraints().add(columnConstraints0);
+        gridPane1.getColumnConstraints().add(columnConstraints1);
         gridPane.getRowConstraints().add(rowConstraints);
         gridPane.getRowConstraints().add(rowConstraints0);
         gridPane.getRowConstraints().add(rowConstraints1);
@@ -348,7 +359,7 @@ public class wow2 extends Application {
         gridPane.getRowConstraints().add(rowConstraints3);
         gridPane.getRowConstraints().add(rowConstraints4);
         gridPane.getRowConstraints().add(rowConstraints5);
-        gridPane.getRowConstraints().add(rowConstraints6);
+        gridPane1.getRowConstraints().add(rowConstraints6);
         gridPane.getChildren().add(label0);
         gridPane.getChildren().add(label1);
         gridPane.getChildren().add(label2);
@@ -356,18 +367,23 @@ public class wow2 extends Application {
         gridPane.getChildren().add(label4);
         gridPane.getChildren().add(label5);
         gridPane.getChildren().add(label6);
-        gridPane.getChildren().add(label7);
-        gridPane.getChildren().add(label8);
+        gridPane1.getChildren().add(label7);
+        gridPane1.getChildren().add(label8);
         gridPane.getChildren().add(label9);
         gridPane.getChildren().add(label10);
-        gridPane.getChildren().add(label11);
+        gridPane1.getChildren().add(label11);
         gridPane.getChildren().add(label12);
         gridPane.getChildren().add(label13);
         gridPane.getChildren().add(label14);
         gridPane.getChildren().add(label15);
         gridPane.getChildren().add(label16);
         gridPane.getChildren().add(label17);
-        hBox0.getChildren().add(gridPane);
+        vBox1.getChildren().add(gridPane);
+        vBox1.getChildren().add(line2);
+        vBox1.getChildren().add(gridPane1);
+
+
+        hBox0.getChildren().add(vBox1);
         hBox0.getChildren().add(line0);
         gridPane0.getColumnConstraints().add(columnConstraints2);
         gridPane0.getColumnConstraints().add(columnConstraints3);
@@ -379,6 +395,7 @@ public class wow2 extends Application {
         gridPane0.getChildren().add(jFXComboBox);
         gridPane0.getChildren().add(jFXButton);
         vBox.getChildren().add(gridPane0);
+
         vBox.getChildren().add(label19);
         hBox0.getChildren().add(vBox);
        vbx_main.getChildren().add(hBox0);
@@ -386,6 +403,7 @@ public class wow2 extends Application {
         primaryStage.setTitle("Cinema Booking Robot");
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
 }
