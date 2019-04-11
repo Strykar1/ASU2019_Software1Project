@@ -1,24 +1,17 @@
 package com.company;
 
-import com.company.payment.Cash;
-import com.company.payment.Payment;
 import com.company.payment.PaymentMethod;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import com.sun.rowset.internal.Row;
+import com.jfoenix.controls.JFXSpinner;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
-import javafx.stage.Stage;
-
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXSpinner;
-import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 
 

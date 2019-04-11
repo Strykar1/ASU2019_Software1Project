@@ -108,3 +108,7 @@ hs_err_pid*
 ###################
 
 _temp/
+.idea/codeStyles/codeStyleConfig.xml
+.idea/misc.xml
+*.iml
+.idea/misc.xml
